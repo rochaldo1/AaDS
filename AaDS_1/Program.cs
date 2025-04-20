@@ -1,5 +1,5 @@
 ﻿using AaDS_1.AsArr;
-using AaDS_1.AsDict;
+using AaDS_1.AsList;
 using System.Diagnostics;
 
 public static class Program
@@ -10,7 +10,7 @@ public static class Program
         TimeSpan elapsed = new();
 
         TrieAsArr trieAsArr = new();
-        TrieAsDict trieAsDict = new();
+        TrieAsList trieAsList = new();
 
         string[] dict = {"acacg", "ab", "acaeg", "acac", "egca"};
 
@@ -31,13 +31,13 @@ public static class Program
         sw.Start();
         foreach (string str in dict)
         {
-            trieAsDict.Insert(str);
+            trieAsList.Insert(str);
         }
         sw.Stop();
         elapsed = sw.Elapsed;
 
         Console.Write("Указатель на начало (второй вариант): ");
         Console.WriteLine(elapsed.TotalMilliseconds);
-        trieAsDict.PrintTree();
+        trieAsList.PrintTree();
     }
 }

@@ -1,17 +1,12 @@
-﻿namespace AaDS_1.AsDict
+﻿namespace AaDS_1.AsList
 {
-    public class TrieAsDict
+    public class TrieAsList
     {
-        private NodeAsDict _root;
-
-        public TrieAsDict()
-        {
-            _root = new NodeAsDict();
-        }
+        private readonly NodeAsList _root = new();
 
         public void Insert(string word)
         {
-            NodeAsDict current = _root;
+            NodeAsList current = _root;
 
             foreach (char ch in word)
             {
@@ -25,7 +20,7 @@
 
         public bool Search(string word)
         {
-            NodeAsDict current = _root;
+            NodeAsList current = _root;
 
             foreach (char ch in word)
             {

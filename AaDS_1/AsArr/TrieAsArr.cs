@@ -1,6 +1,4 @@
-﻿using System.Xml.Linq;
-
-namespace AaDS_1.AsArr
+﻿namespace AaDS_1.AsArr
 {
     public class TrieAsArr
     {

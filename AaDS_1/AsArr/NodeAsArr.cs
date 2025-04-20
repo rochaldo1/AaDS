@@ -1,6 +1,4 @@
-﻿using System.Linq;
-
-namespace AaDS_1.AsArr
+﻿namespace AaDS_1.AsArr
 {
     public class NodeAsArr
     {
@@ -9,7 +7,7 @@ namespace AaDS_1.AsArr
 
         public NodeAsArr()
         {
-            Children = new NodeAsArr[26]; // Для английского алфавита
+            Children = new NodeAsArr[26];
             IsEndOfWord = false;
         }
 
