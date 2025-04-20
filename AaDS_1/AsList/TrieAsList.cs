@@ -18,20 +18,6 @@
             current.IsEndOfWord = true;
         }
 
-        public bool Search(string word)
-        {
-            NodeAsList current = _root;
-
-            foreach (char ch in word)
-            {
-                if (!current.ContainsChild(ch))
-                    return false;
-                current = current.GetChild(ch);
-            }
-
-            return current.IsEndOfWord;
-        }
-
         public void PrintTree()
         {
             _root.PrintTree();
