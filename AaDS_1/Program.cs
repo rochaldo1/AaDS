@@ -8,8 +8,8 @@ public static class Program
         Stopwatch sw = new();
         TimeSpan elapsed = new();
 
-        string a = "ABCBABD";
-        string b = "BDCABA";
+        string a = RandomStringGenerator.GenerateRandomString(10);
+        string b = RandomStringGenerator.GenerateRandomString(10);
 
         sw.Start();
         string lcs = LCS.FindLCS(a, b);
