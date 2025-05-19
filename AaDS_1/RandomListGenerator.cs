@@ -42,11 +42,13 @@
                 {
                     int number = random.Next(start, end + 1);
                     list.Add(number);
-                    if (random.NextDouble() < 0.1) // 10% вероятность повтора
+                    if (random.NextDouble() < 0.1 && list.Count < count) // 10% вероятность повтора
                     {
                         list.Add(number);
+                        i++;
                     }
                 }
+                list = ShuffleList(list);
             }
             else if (uniqueness == 0)
             {
@@ -54,11 +56,13 @@
                 {
                     int number = random.Next(start, end + 1);
                     list.Add(number);
-                    if (random.NextDouble() < 0.5) // 50% вероятность повтора
+                    if (random.NextDouble() < 0.5 && list.Count < count) // 50% вероятность повтора
                     {
                         list.Add(number);
+                        i++;
                     }
                 }
+                list = ShuffleList(list);
             }
             else if (uniqueness == -1)
             {
@@ -73,7 +77,27 @@
                 throw new ArgumentException("Invalid uniqueness parameter");
             }
 
+            if (list.Count > count)
+            {
+                list = list.GetRange(0, count);
+            }
+
             return list;
+        }
+
+        private List<int> ShuffleList(List<int> list)
+        {
+            List<int> shuffledList = new List<int>(list);
+
+            for (int i = shuffledList.Count - 1; i > 0; i--)
+            {
+                int j = random.Next(i + 1);
+                int temp = shuffledList[i];
+                shuffledList[i] = shuffledList[j];
+                shuffledList[j] = temp;
+            }
+
+            return shuffledList;
         }
     }
 }
